@@ -1,6 +1,7 @@
 my_username = 'polar bear'
 pq_prefix   = 'vic-'
 pq_state_id = '53'
+pq_email    = None      # None = default email address, or set to one of your predefined gc email addresses
 pq_data     = 'pq.dat'  # Save the date ranges from project-gc to this file
 
 import mechanize
@@ -58,7 +59,7 @@ def gc_session(username, password):
     return br
 
 
-def add_pq(session,name,state_id,start_day,start_month,start_year,end_day,end_month,end_year,email=r'nowhere@teamunicycle.net'):
+def add_pq(session,name,state_id,start_day,start_month,start_year,end_day,end_month,end_year,email=None):
     r = session.open('https://www.geocaching.com/pocket/gcquery.aspx')
 
     for f in session.forms():
@@ -68,7 +69,7 @@ def add_pq(session,name,state_id,start_day,start_month,start_year,end_day,end_mo
     if session.form == None:
         raise ValueError("Pocket query form not found")
 
-
+    session.form['ctl00$ContentBody$rbRunOption']         = ['2']     # 1 = run and deselect, 2 = run weekly, 3 = run once and delete
     session.form['ctl00$ContentBody$tbName']              = name
 
     session.form['ctl00$ContentBody$tbResults']           = '1000'
@@ -84,7 +85,8 @@ def add_pq(session,name,state_id,start_day,start_month,start_year,end_day,end_mo
     session.form['ctl00$ContentBody$DateTimeEnd$Month']   = [end_month]
     session.form['ctl00$ContentBody$DateTimeEnd$Year']    = [end_year]
 
-    session.form['ctl00$ContentBody$ddlAltEmails']        = [email]
+    if email != None:
+        session.form['ctl00$ContentBody$ddlAltEmails']        = [email]
     session.form['ctl00$ContentBody$cbIncludePQNameInFileName'] = ['on']
 
     r = session.submit()
@@ -118,6 +120,6 @@ for line in fileinput.input(['pq.dat']):
    else:
       (end_day,   end_month,   end_year)   = pgcdate_split(end_date)
 
-   add_pq(s,pq_prefix+row.zfill(2),pq_state_id,start_day,start_month,start_year,end_day,end_month,end_year)
+   add_pq(s,pq_prefix+row.zfill(2),pq_state_id,start_day,start_month,start_year,end_day,end_month,end_year,pq_email)
 
 fileinput.close()
