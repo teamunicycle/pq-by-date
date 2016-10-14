@@ -1,14 +1,20 @@
-my_username = 'polar bear'
-pq_prefix   = 'vic-'
-pq_state_id = '53'
-pq_email    = None      # None = default email address, or set to one of your predefined gc email addresses
-pq_data     = 'pq.dat'  # Save the date ranges from project-gc to this file
-
+import argparse
 import mechanize
 import cookielib
 import fileinput
 import getpass
 from datetime import date
+
+def parse_arguments():
+    parser = argparse.ArgumentParser(description='Add geocaching.com pocket queries by date range')
+    
+    parser.add_argument('-u', '--username', help='Your geocaching.com username', required=True)
+    parser.add_argument('-p', '--prefix', help='A string to prefix each query name', default='pq-')
+    parser.add_argument('-s', '--state', help='The geocaching.com state_id. NSW=52, VIC=53, QLD=54, SA=55, WA=56, TAS=57, NT=58, ACT=59', required=True)
+    parser.add_argument('-e', '--email', help='The email address to receive notifications. Omit to use default', default=None)
+    parser.add_argument('-f', '--datafile', help='The file containing the date ranges. Default=standard input', default='-')
+
+    return parser.parse_args()
 
 def gc_session(username, password):
     # Create a browser
@@ -106,10 +112,11 @@ def pgcdate_split(pgcdate):
     dd = str(d).lstrip("0")              # Can't have leading zero in pq form
     return (dd,mm,y)
 
+args = parse_arguments()
     
-s = gc_session(my_username, getpass.getpass('Password: '))
+s = gc_session(args.username, getpass.getpass('Password: '))
 
-for line in fileinput.input(['pq.dat']):
+for line in fileinput.input([args.datafile]):
    (row,start_date,end_date,num_days,num_caches) = line.rstrip().split("\t")
    print "Adding row "+row
    (start_day, start_month, start_year) = pgcdate_split(start_date)
@@ -118,8 +125,8 @@ for line in fileinput.input(['pq.dat']):
        end_month = '12'
        end_year = str(date.today().year + 1)
    else:
-      (end_day,   end_month,   end_year)   = pgcdate_split(end_date)
+      (end_day, end_month, end_year) = pgcdate_split(end_date)
 
-   add_pq(s,pq_prefix+row.zfill(2),pq_state_id,start_day,start_month,start_year,end_day,end_month,end_year,pq_email)
+   add_pq(s,args.prefix+row.zfill(2),args.state,start_day,start_month,start_year,end_day,end_month,end_year,args.email)
 
 fileinput.close()
