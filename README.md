@@ -48,3 +48,11 @@ The first column of the data file is used as a suffix to the query name.
 make-pq.py -u "polar bear" -p "victoria-" -s 53 -f pq.dat
 
 tail -2l pq.dat | make-pq.py -u grizzlybear -p vic- -s 53 -e grizzly@bearcave.com
+
+## Prerequisites
+
+Ensure you have the bs4 and mechanize packages. If you don't have them you can get them by entering
+
+sudo apt install python-bs4
+sudo apt install python-mechanize
+
