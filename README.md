@@ -33,7 +33,11 @@ optional arguments:
   -f, --datafile DATAFILE
                         The file containing the date ranges. Default=standard
                         input
+  -q, --queue           Queue the queries to run on the next available days
+                        Does not queue for current day
+                        Uses current queue by day
 ---
+
 
 There is no checking that the pocket queries already exist.
 You will need to set the days to run the queries manually once these have been added.
