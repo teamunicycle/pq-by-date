@@ -51,8 +51,13 @@ tail -2l pq.dat | make-pq.py -u grizzlybear -p vic- -s 53 -e grizzly@bearcave.co
 
 ## Prerequisites
 
-Ensure you have the bs4 and mechanize packages. If you don't have them you can get them by entering
+Ensure you have the bs4 and mechanize packages. If you don't have them you can get them (on Ubuntu) by entering
 
 sudo apt install python-bs4
 sudo apt install python-mechanize
 
+Note: On linux based systems use the python command 
+
+e.g. 
+
+python make-pq.py <other options>
