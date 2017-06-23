@@ -56,14 +56,14 @@ def gc_session(username, password):
 
     # Find the login form
     for f in br.forms():
-        if f.attrs['id'] == 'aspnetForm':
+        if 'action' in f.attrs and f.attrs['action'] == '/account/login':
             br.form = f
             break
     if br.form == None:
         raise ValueError("Login form not found")
 
-    br.form['ctl00$ContentBody$tbUsername'] = username
-    br.form['ctl00$ContentBody$tbPassword'] = password
+    br.form['Username'] = username
+    br.form['Password'] = password
 
     r = br.submit()
     if r.code != 200:
