@@ -13,7 +13,7 @@ def parse_arguments():
     
     parser.add_argument('-u', '--username', help='Your geocaching.com username', required=True)
     parser.add_argument('-p', '--prefix', help='A string to prefix each query name', default='pq-')
-    parser.add_argument('-s', '--state', help='The geocaching.com state_id. NSW=52, VIC=53, QLD=54, SA=55, WA=56, TAS=57, NT=58, ACT=59', required=True)
+    parser.add_argument('-s', '--state', help='The geocaching.com state_id. Multiple state IDs may be separated by comma. NSW=52, VIC=53, QLD=54, SA=55, WA=56, TAS=57, NT=58, ACT=59', required=True)
     parser.add_argument('-e', '--email', help='The email address to receive notifications. Omit to use default', default=None)
     parser.add_argument('-f', '--datafile', help='The file containing the date ranges. Default=standard input', default='-')
     parser.add_argument('-q', '--queue', help='Queue queries over subsequent days', action='store_true')
@@ -138,7 +138,7 @@ def add_pq(session,name,state_id,start_day,start_month,start_year,end_day,end_mo
 
     session.form['ctl00$ContentBody$tbResults']           = '1000'
     session.form['ctl00$ContentBody$CountryState']        = ['rbStates']
-    session.form['ctl00$ContentBody$lbStates']            = [state_id]
+    session.form['ctl00$ContentBody$lbStates']            = state_id.split(",")
     session.form['ctl00$ContentBody$Placed']              = ['rbPlacedBetween']
 
     session.form['ctl00$ContentBody$DateTimeBegin$Day']   = [start_day]
