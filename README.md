@@ -11,8 +11,7 @@ Run the scipt
 
 WARNING: There isn't very much input validation
 
----
-
+```
 usage: make-pq.py [-h] -u USERNAME [-p PREFIX] -s STATE [-e EMAIL]
                   [-f DATAFILE]
 
@@ -36,7 +35,7 @@ optional arguments:
   -q, --queue           Queue the queries to run on the next available days
                         Does not queue for current day
                         Uses current queue by day
----
+```
 
 
 There is no checking that the pocket queries already exist.
