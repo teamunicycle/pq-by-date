@@ -155,7 +155,9 @@ def add_pq(session,name,state_id,start_day,start_month,start_year,end_day,end_mo
 
     if (queue == True) and (next_free_day != None):
             session.form['ctl00$ContentBody$cbDays$'+str(next_free_day)] = [str(next_free_day)]
-       
+
+    session.set_all_readonly(False)
+    session.form['__EVENTTARGET'] = "ctl00$ContentBody$btnSubmit"
 
     r = session.submit()
     if r.code != 200:
