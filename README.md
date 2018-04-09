@@ -25,8 +25,8 @@ optional arguments:
                         A string to prefix each query name
   -s, --state STATE
                         The geocaching.com state_id. Multiple state IDs may be
-                        separated by comma. NSW=52, VIC=53, QLD=54, SA=55,
-                        WA=56, TAS=57, NT=58, ACT=59
+                        separated by comma. See state_ids.txt for valid
+                        values.
   -e, --email EMAIL
                         The email address to receive notifications. Omit to
                         use default
