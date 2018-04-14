@@ -13,7 +13,7 @@ def parse_arguments():
     
     parser.add_argument('-u', '--username', help='Your geocaching.com username', required=True)
     parser.add_argument('-p', '--prefix', help='A string to prefix each query name', default='pq-')
-    parser.add_argument('-s', '--state', help='The geocaching.com state_id. Multiple state IDs may be separated by comma. NSW=52, VIC=53, QLD=54, SA=55, WA=56, TAS=57, NT=58, ACT=59', required=True)
+    parser.add_argument('-s', '--state', help='The geocaching.com state_id. Multiple state IDs may be separated by comma. See state_ids.txt for valid values.', required=True)
     parser.add_argument('-e', '--email', help='The email address to receive notifications. Omit to use default', default=None)
     parser.add_argument('-f', '--datafile', help='The file containing the date ranges. Default=standard input', default='-')
     parser.add_argument('-q', '--queue', help='Queue queries over subsequent days', action='store_true')

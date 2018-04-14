@@ -1,0 +1,462 @@
+189: Abruzzo
+162: Acre
+454: Aguascalientes
+312: Aichi
+240: Akershus
+383: Akita
+ 60: Alabama
+163: Alagoas
+  2: Alaska
+ 63: Alberta
+433: Alsace
+164: Amapá
+165: Amazonas
+116: Andalucía
+ 87: Antwerpen
+313: Aomori
+412: Aquitaine
+119: Aragón
+  3: Arizona
+  4: Arkansas
+113: Arquipélago da Madeira
+114: Arquipélago dos Açores
+247: Aust-Agder
+ 59: Australian Capital Territory
+413: Auvergne
+ 95: Aveiro
+434: Bács-Kiskun
+135: Baden-Württemberg
+166: Bahia
+455: Baja California
+456: Baja California Sur
+287: Banskobystrický kraj
+435: Baranya
+190: Basilicata
+414: Basse-Normandie
+136: Bayern
+ 96: Beja
+436: Békés
+137: Berlin
+359: Blekinge
+437: Borsod-Abaúj-Zemplén
+415: Bourgogne
+ 91: Brabant wallon
+ 97: Braga
+ 98: Bragança
+138: Brandenburg
+288: Bratislavský kraj
+139: Bremen
+416: Bretagne
+ 64: British Columbia
+ 93: Brussels
+438: Budapest
+258: Burgenland
+297: Busan
+244: Buskerud
+192: Calabria
+  5: California
+193: Campania
+457: Campeche
+130: Cantabria
+ 99: Castelo Branco
+115: Castilla y León
+117: Castilla-La Mancha
+121: Cataluña
+167: Ceará
+417: Centre
+133: Ceuta
+418: Champagne-Ardenne
+486: Chatham Islands
+458: Chiapas
+314: Chiba
+459: Chihuahua
+305: Chungcheong buk do
+306: Chungcheong nam do
+460: Coahuila
+100: Coimbra
+461: Colima
+  6: Colorado
+127: Comunidad de Madrid
+126: Comunidad Foral de Navarra
+123: Comunidad Valenciana
+227: Connacht
+  7: Connecticut
+419: Corse
+439: Csongrád
+298: Daegu
+301: Daejeon
+360: Dalarna
+  9: Delaware
+  8: District of Columbia
+168: Distrito Federal
+462: Distrito Federal
+396: Dolnośląskie
+385: Drenthe
+226: Dublin
+463: Durango
+215: East Midlands
+153: Eastern Cape
+219: Eastern England
+315: Ehime
+194: Emilia–Romagna 
+234: Espace Mittelland (BE/SO)
+169: Espírito Santo
+101: Évora
+120: Extremadura
+102: Faro
+440: Fejér
+257: Finnmark
+395: Flevoland
+ 10: Florida
+420: Franche-Comté
+160: Free State
+394: Friesland
+195: Friuli–Venezia Giulia
+316: Fukui
+317: Fukuoka
+318: Fukushima
+122: Galicia
+304: Gangwondo
+159: Gauteng
+362: Gävleborg
+387: Gelderland
+ 11: Georgia
+319: Gifu
+170: Goiás
+361: Gotland
+229: Graubuenden (GR)
+384: Groningen
+464: Guanajuato
+103: Guarda
+465: Guerrero
+320: Gunma
+300: Gwangju
+303: Gyeonggido
+309: Gyeongsang buk do
+310: Gyeongsang nam do
+441: Gyor-Moson-Sopron
+ 88: Hainaut
+442: Hajdú-Bihar
+363: Halland
+140: Hamburg
+421: Haute-Normandie
+ 12: Hawaii
+242: Hedmark
+150: Hessen
+443: Heves
+466: Hidalgo
+321: Hiroshima
+286: Hlavni mesto Praha
+322: Hokkaido
+250: Hordaland
+323: Hyogo
+324: Ibaraki
+ 13: Idaho
+422: Île-de-France
+ 14: Illinois
+299: Incheon
+ 15: Indiana
+ 16: Iowa
+325: Ishikawa
+132: Islas Baleares
+128: Islas Canarias
+326: Iwate
+467: Jalisco
+364: Jämtland
+444: Jász-Nagykun-Szolnok
+311: Jejudo
+307: Jeolla buk do
+308: Jeolla nam do
+274: Jihocesky kraj
+273: Jihomoravsky kraj
+365: Jönköping
+236: Jura (JU/NE)
+327: Kagawa
+328: Kagoshima
+366: Kalmar
+329: Kanagawa
+ 17: Kansas
+276: Karlovarsky kraj
+259: Kärnten
+ 18: Kentucky
+330: Kochi
+445: Komárom-Esztergom
+289: Košický kraj
+284: Kraj Vysocina
+275: Kralovehradecky kraj
+367: Kronoberg
+397: Kujawsko-Pomorskie
+331: Kumamoto
+157: Kwazulu Natal
+332: Kyoto
+131: La Rioja
+423: Languedoc-Roussillon
+196: Lazio
+228: Leinster
+104: Leiria
+277: Liberecky kraj
+ 80: Liège
+197: Liguria
+ 89: Limburg
+393: Limburg
+424: Limousin
+158: Limpopo
+105: Lisboa
+400: Łódzkie
+198: Lombardia
+220: London
+425: Lorraine
+ 19: Louisiana
+398: Lubelskie
+399: Lubuskie
+ 90: Luxembourg
+ 20: Maine
+401: Małopolskie
+ 65: Manitoba
+171: Maranhão
+199: Marche
+ 21: Maryland
+ 22: Massachusetts
+172: Mato Grosso
+173: Mato Grosso do Sul
+402: Mazowieckie
+141: Mecklenburg-Vorpommern
+134: Melilla
+468: México
+ 23: Michigan
+469: Michoacán
+426: Midi-Pyrénées
+333: Mie
+174: Minas Gerais
+ 24: Minnesota
+ 25: Mississippi
+ 26: Missouri
+334: Miyagi
+335: Miyazaki
+200: Molise
+ 27: Montana
+279: Moravskoslezsky kraj
+252: Møre og Romsdal
+470: Morelos
+155: Mpumalanga
+225: Munster
+336: Nagano
+337: Nagasaki
+ 81: Namur
+338: Nara
+471: Nayarit
+ 28: Nebraska
+ 29: Nevada
+ 66: New Brunswick
+ 30: New Hampshire
+ 31: New Jersey
+ 32: New Mexico
+ 52: New South Wales
+ 33: New York
+ 67: Newfoundland and Labrador
+260: Niederösterreich
+142: Niedersachsen
+339: Niigata
+290: Nitriansky kraj
+446: Nógrád
+392: Noord-Brabant
+389: Noord-Holland
+255: Nordland
+427: Nord-Pas-de-Calais
+143: Nordrhein-Westfalen
+254: Nord-Trøndelag
+232: Nordwestschweiz (AG/BL/BS)
+368: Norrbotten
+ 34: North Carolina
+ 35: North Dakota
+ 82: North Island
+217: North Wales
+156: North West
+212: Northeast England
+154: Northern Cape
+210: Northern Scotland
+ 58: Northern Territory
+213: Northwest England
+ 72: Northwest Territories
+ 68: Nova Scotia
+472: Nuevo León
+ 73: Nunavut
+473: Oaxaca
+261: Oberösterreich
+ 36: Ohio
+340: Oita
+341: Okayama
+342: Okinawa
+ 37: Oklahoma
+278: Olomoucky kraj
+ 69: Ontario
+ 76: Oost-Vlaanderen
+403: Opolskie
+243: Oppland
+378: Örebro
+ 38: Oregon
+343: Osaka
+241: Oslo
+379: Östergötland
+239: Østfold
+230: Ostschweiz (SG/SH/TG/AI/AR/GL)
+386: Overijssel
+129: País Vasco
+175: Pará
+176: Paraíba
+177: Paraná
+280: Pardubicky kraj
+428: Pays de la Loire
+ 39: Pennsylvania
+178: Pernambuco
+447: Pest
+179: Piauí
+429: Picardie
+201: Piemonte
+281: Plzensky kraj
+404: Podkarpackie
+405: Podlaskie
+430: Poitou-Charentes
+406: Pomorskie
+106: Portalegre
+107: Porto
+291: Prešovský kraj
+ 70: Prince Edward Island
+125: Principado de Asturias
+431: Provence-Alpes-Côte d'Azur
+474: Puebla
+202: Puglia
+ 62: Quebec
+ 54: Queensland
+475: Querétaro
+476: Quintana Roo
+124: Región de Murcia
+231: Region Zuerich (ZH)
+144: Rheinland-Pfalz
+ 40: Rhode Island
+432: Rhône-Alpes
+180: Rio de Janeiro
+181: Rio Grande do Norte
+182: Rio Grande do Sul
+249: Rogaland
+183: Rondônia
+184: Roraima
+145: Saarland
+146: Sachsen
+147: Sachsen-Anhalt
+344: Saga
+345: Saitama
+262: Salzburg
+477: San Luis Potosí
+185: Santa Catarina
+108: Santarém
+186: São Paulo
+203: Sardegna
+ 71: Saskatchewan
+148: Schleswig-Holstein
+296: Seoul
+187: Sergipe
+109: Setúbal
+346: Shiga
+347: Shimane
+348: Shizuoka
+204: Sicilia
+478: Sinaloa
+369: Skåne
+407: Śląskie
+371: Södermanland
+251: Sogn og Fjordane
+448: Somogy
+479: Sonora
+253: Sør-Trøndelag
+ 55: South Australia
+ 41: South Carolina
+ 42: South Dakota
+223: South East England
+ 86: South Island
+218: South Wales
+222: South West England
+221: Southern England
+211: Southern Scotland
+263: Steiermark
+370: Stockholm
+282: Stredocesky kraj
+235: Suisse romande (GE/VD/FR)
+408: Świętokrzyskie
+449: Szabolcs-Szatmár-Bereg
+480: Tabasco
+481: Tamaulipas
+ 57: Tasmania
+245: Telemark
+ 43: Tennessee
+238: Tessin (TI)
+ 44: Texas
+149: Thüringen
+264: Tirol
+482: Tlaxcala
+188: Tocantins
+349: Tochigi
+350: Tokushima
+351: Tokyo
+450: Tolna
+205: Toscana
+352: Tottori
+353: Toyama
+292: Trenčiansky kraj
+206: Trentino–Alto Adige 
+293: Trnavský kraj
+256: Troms
+302: Ulsan
+224: Ulster
+207: Umbria
+372: Uppsala
+283: Ustecky kraj
+ 45: Utah
+388: Utrecht
+208: Valle d'Aosta
+373: Värmland
+451: Vas
+374: Västerbotten
+375: Västernorrland
+376: Västmanland
+377: Västra Götaland
+209: Veneto
+483: Veracruz
+ 46: Vermont
+248: Vest-Agder
+246: Vestfold
+452: Veszprém
+110: Viana do Castelo
+ 53: Victoria
+112: Vila Real
+ 47: Virginia
+111: Viseu
+ 78: Vlaams-Brabant
+265: Vorarlberg
+354: Wakayama
+237: Wallis (VS)
+409: Warmińsko-Mazurskie
+ 48: Washington
+216: West Midlands
+ 49: West Virginia
+ 56: Western Australia
+152: Western Cape
+ 92: West-Vlaanderen
+410: Wielkopolskie
+295: Wien
+ 50: Wisconsin
+ 51: Wyoming
+355: Yamagata
+356: Yamaguchi
+357: Yamanashi
+214: Yorkshire
+484: Yucatán
+ 74: Yukon Territory
+485: Zacatecas
+411: Zachodniopomorskie
+453: Zala
+391: Zeeland
+233: Zentralschweiz (ZG/SZ/LU/UR/OW/NW)
+294: Žilinský kraj
+285: Zlinsky kraj
+390: Zuid-Holland
