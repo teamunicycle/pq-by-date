@@ -56,7 +56,7 @@ def gc_session(username, password):
 
     # Find the login form
     for f in br.forms():
-        if 'action' in f.attrs and f.attrs['action'] == '/account/login':
+        if 'action' in f.attrs and f.attrs['action'] == '/account/signin':
             br.form = f
             break
     if br.form == None:
