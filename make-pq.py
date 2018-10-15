@@ -62,7 +62,7 @@ def gc_session(username, password):
     if br.form == None:
         raise ValueError("Login form not found")
 
-    br.form['Username'] = username
+    br.form['UsernameOrEmail'] = username
     br.form['Password'] = password
 
     r = br.submit()
