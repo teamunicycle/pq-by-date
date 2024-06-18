@@ -1,6 +1,6 @@
 import argparse
 import mechanize
-import cookielib
+import http.cookiejar as cookielib
 import fileinput
 import getpass
 from datetime import date
@@ -17,6 +17,8 @@ def parse_arguments():
     parser.add_argument('-e', '--email', help='The email address to receive notifications. Omit to use default', default=None)
     parser.add_argument('-f', '--datafile', help='The file containing the date ranges. Default=standard input', default='-')
     parser.add_argument('-q', '--queue', help='Queue queries over subsequent days', action='store_true')
+    parser.add_argument('-xf', '--exclude-found', help='Exclude found caches from query', action='store_true')
+    parser.add_argument('-xo', '--exclude-owned', help='Exclude owned caches from query', action='store_true')
 
     return parser.parse_args()
 
@@ -73,24 +75,40 @@ def gc_session(username, password):
 
 ######################################################################################################
 
-def get_pq_summary(session):
-    """Get server's weekday and table of current PQs per day"""
+def split_digits(text):
+  """
+  Extracts number from a list of strings
 
-    r = session.open('https://www.geocaching.com/pocket/')
-    if r.code != 200:
-        raise ValueError("Unable to retrieve PQ summary page page")
+  Args:
+      text: The list of strings to process.
 
-    soup = BeautifulSoup(session.response().read())
+  Returns:
+      A list of integers representing the extracted groups of digits.
+  """
+  number_list = []
+  for item in text:
+    number_list.append(int("".join(filter(str.isdigit,item.text))))
+  return number_list
 
-    server_day_name=soup.find("div", id="ActivePQs").find("p").find("small").find("strong").next_sibling.strip().split(",")[0]
-    server_day = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'].index(server_day_name)
+######################################################################################################
 
-    day_text = soup.find("tr", class_="TableFooter").find_all("td")[3:10]
-    day_counts = []
-    for item in day_text:
-        day_counts.append(int(filter(unicode.isdigit, unicode(item))))
 
-    return server_day,day_counts
+# def get_pq_summary(session):
+#     """Get server's weekday and table of current PQs per day"""
+
+#     r = session.open('https://www.geocaching.com/pocket/')
+#     if r.code != 200:
+#         raise ValueError("Unable to retrieve PQ summary page page")
+
+#     soup = BeautifulSoup(session.response().read())
+
+#     server_day_name=soup.find("div", id="ActivePQs").find("p").find("small").find("strong").next_sibling.strip().split(",")[0]
+#     server_day = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'].index(server_day_name)
+
+#     day_text = soup.find("tr", class_="TableFooter").find_all("td")[3:10]
+#     day_counts = split_digits(day_text)
+
+#     return server_day,day_counts
 
 ######################################################################################################
 
@@ -101,25 +119,41 @@ def get_next_free_day(session):
     if r.code != 200:
         raise ValueError("Unable to retrieve PQ summary page page")
     
-    soup = BeautifulSoup(session.response().read())
+ ###soup = BeautifulSoup(session.response().read(), "lxml")
+    soup = BeautifulSoup(session.response().read(), "html5lib")
     
     server_day_name=soup.find("div", id="ActivePQs").find("p").find("small").find("strong").next_sibling.strip().split(",")[0]
     server_day = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'].index(server_day_name)
     
     day_text = soup.find("tr", class_="TableFooter").find_all("td")[3:10]
-    day_counts = []
-    for item in day_text:
-        day_counts.append(int(filter(unicode.isdigit, unicode(item))))
+    day_counts = split_digits(day_text)
     
-    for i in xrange(0,6):                 # only 6 days. Never queue for today
-        day_index = (server_day+i+1) % 7
-        if day_counts[day_index] < 10:
-           return day_index
+#   Avoid adding queries for today (ie, will never have lowest count)
+    day_counts[server_day] = 999
+
+#   Distribute evenly over days: pick the day with the least existing queries
+    return min(range(len(day_counts)), key=day_counts.__getitem__)
+    
+
+#   Alternative: fill each day's queries first
+#
+#   for i in range(6):                 # only 6 days. Never queue for today Alternative: fill each day's queries first
+#       day_index = (server_day+i+1) % 7    Alternative: fill each day's queries first
+#       if day_counts[day_index] < 10:  Alternative: fill each day's queries first
+#          return day_index Alternative: fill each day's queries first
 
 
 ######################################################################################################    
 
-def add_pq(session,name,state_id,start_day,start_month,start_year,end_day,end_month,end_year,queue,email=None):
+def add_pq(session,
+           name,
+           state_id,
+           start_day, start_month, start_year,
+           end_day,end_month,end_year,
+           queue,
+           email=None,
+           exclude_found=False,
+           exclude_owned=False):
 
     if queue == True:
         next_free_day = get_next_free_day(session)
@@ -148,6 +182,12 @@ def add_pq(session,name,state_id,start_day,start_month,start_year,end_day,end_mo
     session.form['ctl00$ContentBody$DateTimeEnd$Day']     = [end_day]
     session.form['ctl00$ContentBody$DateTimeEnd$Month']   = [end_month]
     session.form['ctl00$ContentBody$DateTimeEnd$Year']    = [end_year]
+
+    if exclude_found:
+        session.form['ctl00$ContentBody$cbOptions$0']     = ['2']
+
+    if exclude_owned:
+        session.form['ctl00$ContentBody$cbOptions$2']     = ['6']
 
     if email != None:
         session.form['ctl00$ContentBody$ddlAltEmails']        = [email]
@@ -187,7 +227,7 @@ s = gc_session(args.username, getpass.getpass('Password: '))
 
 for line in fileinput.input([args.datafile]):
    (row,start_date,end_date,num_days,num_caches) = line.rstrip().split("\t")
-   print "Adding row "+row
+   print("Adding row "+row)
    (start_day, start_month, start_year) = pgcdate_split(start_date)
    if end_date == "":                    # The last entry has no end date. Use end of next year
        end_day = '31'
@@ -196,6 +236,14 @@ for line in fileinput.input([args.datafile]):
    else:
       (end_day, end_month, end_year) = pgcdate_split(end_date)
 
-   add_pq(s,args.prefix+row.zfill(2),args.state,start_day,start_month,start_year,end_day,end_month,end_year,args.queue,args.email)
+   add_pq(s,
+          args.prefix+row.zfill(2),
+          args.state,
+          start_day,start_month,start_year,
+          end_day,end_month,end_year,
+          args.queue,
+          args.email,
+          args.exclude_found,
+          args.exclude_owned)
 
 fileinput.close()
